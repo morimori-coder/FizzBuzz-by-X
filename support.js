@@ -14,11 +14,11 @@ class Support {
 
     support(targetNumber) {
         if (this.resolve(targetNumber)) {
-            this.done(targetNumber);
+            return this.done(targetNumber);
         } else if (this.#next) {
-            this.#next.support(targetNumber);
+            return this.#next.support(targetNumber);
         } else {
-            this.notMatch(targetNumber);
+            return this.notMatch(targetNumber);
         }
 
     }
@@ -32,13 +32,11 @@ class Support {
     }
 
     done(targetNumber) {
-        console.log(targetNumber + ': ' + this.getName());
+        return `Support for ${targetNumber} is resolved by ${this.getName()}`;
     }
 
     notMatch(targetNumber) {
-        if (this.#next === null) {
-            console.log(targetNumber + ': not match');
-        }
+        return `Support for ${targetNumber} could not be resolved.`;
     }
 
 }
