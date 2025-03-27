@@ -15,12 +15,13 @@ class Support {
     support(targetNumber) {
         if (this.resolve(targetNumber)) {
             return this.done(targetNumber);
-        } else if (this.#next) {
-            return this.#next.support(targetNumber);
-        } else {
-            return this.notMatch(targetNumber);
         }
-
+        
+        if (this.#next) {
+            return this.#next.support(targetNumber);
+        }
+        
+        return this.notMatch(targetNumber);
     }
 
     getName() {
