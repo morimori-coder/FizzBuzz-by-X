@@ -1,9 +1,8 @@
 import Support from "./support.js";
 
 class SupportKass extends Support {
-  constructor() {
-    super();
-    this.name = 'Kass';
+  constructor(name) {
+    super(name);
   }
 
   resolve(targetNumber) {

@@ -1,9 +1,8 @@
 import Support from "./support.js";
 
 class SupportFizzBuzz extends Support {
-  constructor() {
-    super();
-    this.name = 'FizzBuzz';
+  constructor(name) {
+    super(name);
   }
 
   resolve(targetNumber) {
